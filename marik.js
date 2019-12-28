@@ -17,19 +17,20 @@ const generateSeq = fn => (array, n) => {
 const result = array => {
     console.log(array);
     let compareValue = array[0];
-    const sqrt = Math.sqrt(array.length);
-    for (let i = 0; i < 3; i++) {           // add Math.floor soon
-        if (array[i] >= array[i-1]) {
-            console.log('comp val' + compareValue);
+    const sqrt = Math.floor(Math.sqrt(array.length));
+    for (let i = 0; i < sqrt; i++) {           
+        if (array[i] > compareValue) {
             compareValue = array[i];
         }
     }
-    for (let j = 3; j < array.length; j++) {
-        if(array[j] > compareValue) {
-            return array[j];
+    console.log('compare value is ' + compareValue);
+
+    for (let i = sqrt; i < array.length; i++) { 
+        if(array[i] > compareValue) {
+            return array[i];
         }
-        if(array[array.length - 1]) return array[array.length -1];
     }
+    return array[array.length - 1];
 };
 
 const array = [];
