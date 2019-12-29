@@ -1,13 +1,12 @@
 'use strict';
 
-
 const generateItem = () => Math.floor(Math.random() * 100 + 1);
 
 const generateSeq = n => {
     let array = [];
     while(n != 0) {
-        const randomItem = generateItem();
-        array.push(randomItem); 
+        const item = generateItem();
+        array.push(item); 
         --n;
     } 
         return array;
@@ -32,6 +31,7 @@ const getResult = (array) => {
     return array[array.length - 1];
 };
 
-const a1 = generateSeq(9);
-const a2 = getResult(a1);
-console.log(a2);
+const compose = countItems => getResult(generateSeq(countItems));
+
+const a3 = compose(16);
+console.log(a3);
