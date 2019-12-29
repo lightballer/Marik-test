@@ -3,18 +3,17 @@
 
 const generateItem = () => Math.floor(Math.random() * 100 + 1);
 
-const generateSeq = fn => (array, n) => {
-    if (n != 0) {
-        const randomItem = fn();
+const generateSeq = n => {
+    let array = [];
+    while(n != 0) {
+        const randomItem = generateItem();
         array.push(randomItem); 
-        return generateSeq(fn)(array, --n);
+        --n;
     } 
-    else {
         return array;
-    }
 };
 
-const result = array => {
+const getResult = (array) => {
     console.log(array);
     let compareValue = array[0];
     const sqrt = Math.floor(Math.sqrt(array.length));
@@ -33,7 +32,6 @@ const result = array => {
     return array[array.length - 1];
 };
 
-const array = [];
-const a1 = generateSeq(generateItem)(array, 9);
-const a2 = result(a1);
+const a1 = generateSeq(9);
+const a2 = getResult(a1);
 console.log(a2);
