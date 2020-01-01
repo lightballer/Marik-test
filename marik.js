@@ -60,6 +60,3 @@ const multiplyExec = (fn, n) => count => {
 
 const a4 = multiplyExec(compose, 9)(100);   // 9 items in array, 100 iterations
 console.log(a4);
-
-
-//git commit -m 'add true/false return of function getResult, add function multiplyExec to plural executing and calculating persent of true returns'
