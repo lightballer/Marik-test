@@ -45,18 +45,7 @@ const getResult = (array) => {
 
 const compose = countItems => getResult(generateSeq(countItems)); 
 
-const multiplyExec = (fn, n) => count => {
-    let result = 0;
-    while(count != 0) {
-        const exec = fn(n);
-        if(exec == true) result += 1;
-        --count;
-    } 
-    return result + ' %';
-};
+module.exports.compose = compose;
+module.exports.generateSeq = generateSeq;
+module.exports.generateItem = generateItem;
 
-// const a3 = compose(16);
-// console.log(a3);
-
-const a4 = multiplyExec(compose, 9)(100);   // 9 items in array, 100 iterations
-console.log(a4);
