@@ -13,7 +13,7 @@ const generateSeq = n => {
 };
 
 const getResult = (array) => {
-    //console.log(array);
+    console.log(array);
     let compareValue = array[0];
     const sqrt = Math.floor(Math.sqrt(array.length));
     
@@ -31,15 +31,11 @@ const getResult = (array) => {
         }
     }
     //console.log('new compare is ' + compareValue);
-    let maxValue = array[0];
     
-    for(let k = 0; k < array.length; k++) {
-        if(array[k] > maxValue) {
-            maxValue = array[k];
-        }
-    }
+    const maxValue = array.reduce((a, b) => a > b ? a : b);
     //console.log('max value is ' + maxValue);
-   if(compareValue == maxValue) return true;
+   
+    if(compareValue == maxValue) return true;
    else return false;
 };
 
