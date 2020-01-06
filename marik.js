@@ -36,7 +36,7 @@ const getResult = (array) => {
     //console.log('max value is ' + maxValue);
    
     if(compareValue == maxValue) return true;
-   else return false;
+    else return false;
 };
 
 const compose = countItems => getResult(generateSeq(countItems)); 
